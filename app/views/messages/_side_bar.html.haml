@@ -2,14 +2,14 @@
   .side-bar__header
     .side-bar__header__box
       %p.side-bar__header__box__username
-        masa
+        = current_user.name
       %ul.side-bar__header__box__menu
         %li.side-bar__header__box__menu__new
-        =link_to "#" do
-          = icon('far', 'edit', class: "icons__btn1")
+        =link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: "icons__btn1")
         %li.side-bar__header__box__menu__edit
         =link_to "#" do
-          = icon('fas', 'cog', class: "icons__btn2")
+          = icon('far', 'edit', class: "icons__btn2")
 
   .side-bar__group
     .side-bar__group__list
