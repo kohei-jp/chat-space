@@ -46,6 +46,10 @@
     &__list {
       height: 91px;
       padding-bottom:40px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
       &__link {
         &--name {
           font-size: 15px;
@@ -79,15 +83,15 @@
         font-size: 12px;
         color: #999999;
       }
-      
     }
-    &__edit-btn {
+    &__edit-btn a{
+      font-size: 16px;
+      margin-top: 28px;
       text-decoration: none;
-      margin: 28px 20px 32px 20px;
-    }
-    a {
-      width: 32px;
       height: 40px;
+      width: 72px;
+      padding: 0 20px;
+      border: solid 1px #38aef0;
       line-height: 40px;
       text-decoration: none;
       display: inline-block;
@@ -99,6 +103,7 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 0 0 40px;
+    overflow: scroll;
     &__unit {
       padding-bottom: 46px;
       &__data {
@@ -113,51 +118,68 @@
           margin-left:5px;
         }
       }
-      &--comment {
-        color: rgb(23, 40, 63);
-        font-size: 14px;
+      &__comment {
+        &--cont {
+          color: rgb(23, 40, 63);
+          font-size: 14px;
+        }
       }
     }
   }
+
 
   &__form {
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
- 
-    form {
-      display: flex;
-      .input_box {
-        width: 100%;
-        display: flex;
+    display: flex;
+    justify-content: space-between;
+    .new_message {
+      // display: flex;
+      position: relative;
+      background-color: #d2d2d2;
+      width: 100%;
+    }
+    .form {
+      background: white;
+      width: 100%;
+      height: 50px;
+      margin: 0;
+      &__text {
+      // formに自動生成されるクラス 
+        width: calc(100% - 115px);
+        margin: 0;
+        height: 50px;
         position: relative;
-        &__text {
-          height: 50px;
-          width: 100%;
-          color: #434a54;
-          border-style: none;
-          padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+        padding: 0 40px 0 10px;
         }
-        &__image {
+      &__mask {
+        position: absolute;
+        right: 120px;
+        top: 10px;
+        .icon {
           cursor: pointer;
-          font-size: 1.3rem;
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          &__file {
-            display: none;
+          font-size: 1.5em;
+        }
+        &__file {
+          display: none;
           }
         }
-      }
       .submit-btn {
         width: 100px;
         height: 50px;
         padding: 0 30px;
-        margin-left: 15px;
+        position: absolute;
+        right: 0;
         background-color: #38aef0;
         color: $base-color;
         cursor: pointer;
       }
     }
+  }
+  .field_with_errors {
+    display: contents;
   }
 }
