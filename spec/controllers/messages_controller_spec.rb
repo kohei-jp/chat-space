@@ -35,6 +35,7 @@ describe MessagesController do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
+  end
 
     describe '#create' do #これ以降createについて 全然理解していない
     let(:params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message) } }

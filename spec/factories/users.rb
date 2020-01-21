@@ -7,5 +7,4 @@ FactoryBot.define do
     password_confirmation {password}
   end
 end
-
 # 未完成
